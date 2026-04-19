@@ -9,7 +9,7 @@ const CountBox = () => {
   ];
   return (
     <div className="bg-gray-50/50 py-10 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="container">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, index) => (
             <div 

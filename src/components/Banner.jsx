@@ -4,7 +4,7 @@ import { AiOutlinePlus } from 'react-icons/ai';
 const Banner = () => {
     return (
         <section className="bg-[#f8f9fa] min-h-[400px] flex items-center justify-center px-4 py-20">
-            <div className="max-w-3xl mx-auto text-center">
+            <div className="container text-center">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a2b3b] tracking-tight mb-6">
                     Friends to keep close in your life
                 </h1>

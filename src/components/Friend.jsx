@@ -28,8 +28,8 @@ const Friend = ({ friend }) => {
             </div>
             <div className="mt-auto w-full">
                 <span className={`inline-block w-full py-2 rounded-full text-white text-xs font-bold uppercase ${friend.status === 'overdue' ? 'bg-[#ff5252]' :
-                        friend.status === 'on track' ? 'bg-[#2e7d32]' :
-                            'bg-[#ff9800]'
+                    friend.status === 'on track' ? 'bg-[#2e7d32]' :
+                        'bg-[#ff9800]'
                     }`}>
                     {friend.status}
                 </span>

@@ -14,10 +14,10 @@ const ErrorPage = () => {
         </div>
         <div className="mt-8">
           <p className="text-2xl font-semibold md:text-3xl text-gray-800">
-            Oops! Ei page-ti khunje paoa jachche na.
+            Oops! the page is not found..
           </p>
           <p className="mt-4 text-gray-500">
-            Hoyto link-ti bhul chhilo athoba page-ti delete kore deya hoyeche.
+            your location is Wrong...
           </p>
         </div>
         <div className="mt-10">
