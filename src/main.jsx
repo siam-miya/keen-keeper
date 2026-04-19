@@ -10,8 +10,8 @@ import { ToastContainer } from 'react-toastify'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <FriendsContextProvider>
-      <RouterProvider router={router} />,
+      <RouterProvider router={router} />
     </FriendsContextProvider>
     <ToastContainer/>
-  </StrictMode>,
+  </StrictMode>
 )
