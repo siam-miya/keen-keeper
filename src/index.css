@@ -2,5 +2,5 @@
 @plugin "daisyui";
 .container {
   max-width: 1110px;
-  margin: 0 atuo;
+  margin: 0 auto;
 }
