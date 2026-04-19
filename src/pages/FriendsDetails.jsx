@@ -11,7 +11,7 @@ import { toast } from 'react-toastify';
 
 const FriendsDetails = () => {
   const { id } = useParams();
-  const { friends, loading } = useFrinedsHook(); // Added ()
+  const { friends, loading } = useFrinedsHook();
   const { interActive, setInterActive } = useContext(FriendsContext);
 
   const friend = friends?.find((f) => String(f.id) === id);
