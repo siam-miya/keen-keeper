@@ -1,20 +1,19 @@
-import { Children, createContext, useState } from "react";
+// FriendsContext.js
+import { createContext, useState } from "react";
 
+export const FriendsContext = createContext();
 
-export const FriendsContext = createContext()
+const FriendsContextProvider = ({ children }) => {
+  const [interActive, setInterActive] = useState([]);
+  const contextValue = {
+    interActive,
+    setInterActive
+  };
+  return (
+    <FriendsContext.Provider value={contextValue}>
+      {children}
+    </FriendsContext.Provider>
+  );
+};
 
-const FriendsContextProvider = ({children}) => {
-  const [inerActive, setInertActive] = useState([])
-  const data = [
-    {
-     inerActive,
-      setInertActive
-    }
-  ]
-  return <FriendsContext.Provider value={data}>
-           {children}
-  </FriendsContext.Provider>
-}
-
-export default FriendsContextProvider
-
+export default FriendsContextProvider;

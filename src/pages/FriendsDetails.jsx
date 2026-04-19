@@ -4,6 +4,10 @@ import { useParams } from 'react-router';
 import { FriendsContext } from '../context/FriendsContext';
 import { HashLoader } from 'react-spinners';
 import { FaPhoneAlt, FaCommentDots, FaVideo, FaBellSlash, FaArchive, FaTrashAlt } from 'react-icons/fa';
+import call from "../assets/call.png"
+import text from "../assets/text.png"
+import video from "../assets/video.png"
+import { toast } from 'react-toastify';
 
 const FriendsDetails = () => {
   const { id } = useParams();
@@ -22,9 +26,20 @@ const FriendsDetails = () => {
 
   if (!friend) return <div className="p-10 text-center">Friend not found.</div>
 
-  const handleInteraction = () => {
-    setInterActive([...interActive, friend]);
-  }
+ const handleInteraction = (type) => {
+  const newActivity = {
+    id: Date.now(), 
+    friendName: friend.name,
+    type: type, 
+    date: new Date().toLocaleDateString('en-US', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric'
+    })
+  };
+  setInterActive([newActivity, ...interActive]); 
+   toast.success(`${type.charAt(0).toUpperCase() + type.slice(1)} logged successfully!`)
+};
 
   return (
     <div className="max-w-5xl mx-auto p-6 bg-slate-50 min-h-screen">
@@ -89,16 +104,16 @@ const FriendsDetails = () => {
           <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
             <h3 className="font-bold text-emerald-900 text-lg mb-4">Quick Check-In</h3>
             <div className="grid grid-cols-3 gap-4">
-              <button onClick={handleInteraction} className="flex flex-col items-center gap-2 p-6 rounded-xl bg-slate-50 border border-transparent hover:border-emerald-200 hover:bg-emerald-50 transition group">
-                <FaPhoneAlt className="text-2xl text-gray-700 group-hover:text-emerald-700" />
+              <button onClick={()=> handleInteraction("call")} className="flex flex-col items-center gap-2 p-6 rounded-xl bg-slate-50 border border-transparent hover:border-emerald-200 hover:bg-emerald-50 transition group">
+                  <img className="text-2xl text-gray-700 group-hover:text-emerald-700" src={call} alt="call" />
                 <span className="text-gray-600 group-hover:text-emerald-700">Call</span>
               </button>
-              <button onClick={handleInteraction} className="flex flex-col items-center gap-2 p-6 rounded-xl bg-slate-50 border border-transparent hover:border-emerald-200 hover:bg-emerald-50 transition group">
-                <FaCommentDots className="text-2xl text-gray-700 group-hover:text-emerald-700" />
+              <button onClick={()=> handleInteraction("text")} className="flex flex-col items-center gap-2 p-6 rounded-xl bg-slate-50 border border-transparent hover:border-emerald-200 hover:bg-emerald-50 transition group">
+                <img className="text-2xl text-gray-700 group-hover:text-emerald-700" src={text} alt="call" />
                 <span className="text-gray-600 group-hover:text-emerald-700">Text</span>
               </button>
-              <button onClick={handleInteraction} className="flex flex-col items-center gap-2 p-6 rounded-xl bg-slate-50 border border-transparent hover:border-emerald-200 hover:bg-emerald-50 transition group">
-                <FaVideo className="text-2xl text-gray-700 group-hover:text-emerald-700" />
+              <button onClick={()=> handleInteraction("video")} className="flex flex-col items-center gap-2 p-6 rounded-xl bg-slate-50 border border-transparent hover:border-emerald-200 hover:bg-emerald-50 transition group">
+               <img className="text-2xl text-gray-700 group-hover:text-emerald-700" src={video} alt="call" />
                 <span className="text-gray-600 group-hover:text-emerald-700">Video</span>
               </button>
             </div>

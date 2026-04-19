@@ -58,7 +58,7 @@ const Navbar = () => {
             <li key={link.path}>
               <NavLink
                 to={link.path}
-                onClick={() => setIsOpen(false)} // Click korle menu bondho hoye jabe
+                onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
                   `flex items-center gap-3 text-lg font-medium ${
                     isActive ? "text-blue-600" : "text-gray-600"
