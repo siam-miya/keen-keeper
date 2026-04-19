@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 const Friend = ({ friend }) => {
     return (
-        <div
+        <Link to={`friends/${friend.id}`}
             key={friend.id}
             className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center border border-gray-100"
         >
@@ -33,7 +34,7 @@ const Friend = ({ friend }) => {
                     {friend.status}
                 </span>
             </div>
-        </div>
+        </Link>
     )
 }
 

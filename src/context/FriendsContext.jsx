@@ -1,13 +1,14 @@
-import { Children, createContext } from "react";
+import { Children, createContext, useState } from "react";
 
 
 export const FriendsContext = createContext()
 
 const FriendsContextProvider = ({children}) => {
+  const [inerActive, setInertActive] = useState([])
   const data = [
     {
-      name: "siam",
-      age: 11
+     inerActive,
+      setInertActive
     }
   ]
   return <FriendsContext.Provider value={data}>
